@@ -12,10 +12,25 @@ var app = http.createServer(function(req, res) {
 }).listen(process.env.PORT || 8080);
 */
 
+var api_key = 'key-eea59324f0d0124ad09c4ebc21d97dc0';
+var domain = 'sandbox6cbaff98a0cd480fbecac8637f47f695.mailgun.org';
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 console.log('hello');
 fetch(TARGET)
     .then(function(res) {
         return res.text();
     }).then(function(body) {
-        console.log(body.includes('Sorry, but no dates are currently scheduled'));
+      let noClass = body.includes('Sorry, but no dates are currently scheduled');
+      console.log(noClass);
+ 
+      var data = {
+        from: 'Cliff Scraper <postmaster@sandbox6cbaff98a0cd480fbecac8637f47f695.mailgun.org>',
+        to: '8enmann@gmail.com',
+        subject: `Cliff Scraper: ${noClass}`,
+        text: body,
+      };
+ 
+      mailgun.messages().send(data, function (error, body) {
+        console.log(body);
+      });
     });
