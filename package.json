@@ -1,0 +1,15 @@
+{
+  "name": "simple-scraper",
+  "version": "1.0.0",
+  "description": "Scrape a site for salient changes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Mann <8enmann@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^1.6.3",
+    "node-static": "^0.7.9"
+  }
+}
