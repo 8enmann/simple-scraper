@@ -9,6 +9,7 @@
   "author": "Ben Mann <8enmann@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "mailcomposer": "^4.0.0",
     "mailgun-js": "^0.7.15",
     "node-fetch": "^1.6.3",
     "node-static": "^0.7.9"
