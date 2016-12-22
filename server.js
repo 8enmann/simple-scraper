@@ -13,7 +13,7 @@ fetch(process.env.TARGET_URL)
     }).then(function(body) {
       let noClass = body.includes(process.env.TARGET_STRING);
       console.log(noClass);
-      let to = '8enmann@gmail.com';
+      let to = process.env.TARGET_EMAIL;
       var mail = mailcomposer({
         from: 'Cliff Scraper <postmaster@sandbox6cbaff98a0cd480fbecac8637f47f695.mailgun.org>',
         to: to,
